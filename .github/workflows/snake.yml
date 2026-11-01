@@ -39,27 +39,57 @@ jobs:
             const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
             const fmt = n => n >= 1000 ? (n/1000).toFixed(1).replace(/\.0$/,'') + 'k' : String(n);
 
-            // ---------- Données GitHub ----------
-            const q = `query($login:String!){ user(login:$login){
-              name login
-              followers { totalCount }
-              pullRequests { totalCount }
-              issues { totalCount }
-              contributionsCollection {
+            // ---------- Données GitHub (REST + secours, ne plante jamais) ----------
+            const safe = async (label, fn, fallback) => { try { return await fn(); } catch (e) { core.warning(label + ': ' + e.message); return fallback; } };
+            const COLORS = { TypeScript:'#3178c6', JavaScript:'#f1e05a', CSS:'#663399', HTML:'#e34c26', PHP:'#4F5D95', Java:'#b07219', Dart:'#00B4AB',
+              Python:'#3572A5', 'C#':'#178600', Blade:'#f7523f', Vue:'#41b883', SCSS:'#c6538c', Shell:'#89e051', Kotlin:'#A97BFF', Swift:'#F05138',
+              'C++':'#f34b7d', C:'#555555', Go:'#00ADD8', Dockerfile:'#384d54', 'Jupyter Notebook':'#DA5B0B', Ruby:'#701516' };
+
+            const profile = await safe('profile', async () => (await github.rest.users.getByUsername({ username: login })).data, { name: 'Hamza Ezzouek', followers: 0, public_repos: 0 });
+            const allRepos = await safe('repos', () => github.paginate(github.rest.repos.listForUser, { username: login, type: 'owner', per_page: 100 }), []);
+            const repos = allRepos.filter(r => !r.fork);
+            const stars = repos.reduce((a, r) => a + (r.stargazers_count || 0), 0);
+
+            const langMap = {};
+            for (const r of repos) {
+              const l = await safe('langs ' + r.name, async () => (await github.rest.repos.listLanguages({ owner: login, repo: r.name })).data, {});
+              for (const [k, v] of Object.entries(l)) { langMap[k] = langMap[k] || { size: 0, color: COLORS[k] || '#8B949E' }; langMap[k].size += v; }
+            }
+
+            const count = async (q) => safe('search ' + q, async () => (await github.rest.search.issuesAndPullRequests({ q, per_page: 1 })).data.total_count, 0);
+            const prs = await count(`author:${login} type:pr`);
+            const issues = await count(`author:${login} type:issue`);
+
+            // Calendrier de contributions : GraphQL, sinon page publique de GitHub
+            let days = [], total = 0, commits = 0;
+            const g = await safe('graphql', () => github.graphql(`query($login:String!){ user(login:$login){ contributionsCollection {
                 totalCommitContributions restrictedContributionsCount
-                contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } }
+                contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } } } } }`, { login }), null);
+            if (g && g.user) {
+              const cc = g.user.contributionsCollection;
+              days = cc.contributionCalendar.weeks.flatMap(w => w.contributionDays);
+              total = cc.contributionCalendar.totalContributions;
+              commits = cc.totalCommitContributions + cc.restrictedContributionsCount;
+            } else {
+              const html = await safe('contrib page', async () => (await fetch(`https://github.com/users/${login}/contributions`)).text(), '');
+              const idDate = {};
+              for (const m of html.matchAll(/<td[^>]*?data-date="(\d{4}-\d{2}-\d{2})"[^>]*?id="([^"]+)"|<td[^>]*?id="([^"]+)"[^>]*?data-date="(\d{4}-\d{2}-\d{2})"/g))
+                idDate[m[2] || m[3]] = m[1] || m[4];
+              const byDate = {};
+              for (const m of html.matchAll(/<tool-tip[^>]*?for="([^"]+)"[^>]*>([^<]*)<\/tool-tip>/g)) {
+                const d = idDate[m[1]]; if (!d) continue;
+                const n = /^(\d+)/.exec(m[2].trim()); byDate[d] = n ? +n[1] : 0;
               }
-              repositories(ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC, first: 100) {
-                totalCount
-                nodes { stargazerCount languages(first: 10, orderBy: {field: SIZE, direction: DESC}) { edges { size node { name color } } } }
-              }
-            } }`;
-            const { user } = await github.graphql(q, { login });
-            const cc = user.contributionsCollection;
-            const repos = user.repositories.nodes;
-            const stars = repos.reduce((a, r) => a + r.stargazerCount, 0);
-            const commits = cc.totalCommitContributions + cc.restrictedContributionsCount;
-            const days = cc.contributionCalendar.weeks.flatMap(w => w.contributionDays);
+              days = Object.keys(idDate).map(k => idDate[k]).sort().map(d => ({ date: d, contributionCount: byDate[d] || 0 }));
+              const t = /([\d,]+)\s+contributions?\s+in the last year/i.exec(html);
+              total = t ? +t[1].replace(/,/g, '') : days.reduce((a, d) => a + d.contributionCount, 0);
+              commits = await safe('commits', async () => (await github.rest.search.commits({ q: `author:${login}`, per_page: 1 })).data.total_count, 0);
+            }
+            if (days.length < 2) {
+              const today = new Date();
+              days = Array.from({ length: 31 }, (_, i) => ({ date: new Date(today - (30 - i) * 864e5).toISOString().slice(0, 10), contributionCount: 0 }));
+            }
+            const user = { name: profile.name || 'Hamza Ezzouek' };
 
             // ---------- Bannière (header + footer) ----------
             const header = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="230" viewBox="0 0 1200 230">
@@ -87,16 +117,18 @@ jobs:
               <path fill="url(#g)" d="M0 50C160 10 320 90 520 60S860 10 1020 45 1150 70 1200 55V120H0Z"/>
             </svg>`;
 
+            fs.writeFileSync('dist/header.svg', header);
+            fs.writeFileSync('dist/footer.svg', footer);
+
             // ---------- Carte statistiques ----------
             const rows = [
               ['⭐', 'Total Stars', stars],
-              ['📦', 'Public Repos', user.repositories.totalCount],
-              ['🔨', 'Commits (last year)', commits],
-              ['🔀', 'Pull Requests', user.pullRequests.totalCount],
-              ['❗', 'Issues', user.issues.totalCount],
-              ['👥', 'Followers', user.followers.totalCount],
+              ['📦', 'Public Repos', repos.length],
+              ['🔨', 'Commits', commits],
+              ['🔀', 'Pull Requests', prs],
+              ['❗', 'Issues', issues],
+              ['👥', 'Followers', profile.followers || 0],
             ];
-            const total = cc.contributionCalendar.totalContributions;
             const R = 48, CIRC = 2 * Math.PI * R;
             const ratio = Math.min(total / 1000, 1);
             const stats = `<svg xmlns="http://www.w3.org/2000/svg" width="450" height="200" viewBox="0 0 450 200">
@@ -120,12 +152,6 @@ jobs:
             </svg>`;
 
             // ---------- Carte langages ----------
-            const langMap = {};
-            for (const r of repos) for (const e of r.languages.edges) {
-              const k = e.node.name;
-              langMap[k] = langMap[k] || { size: 0, color: e.node.color || '#8B949E' };
-              langMap[k].size += e.size;
-            }
             const langs = Object.entries(langMap).sort((a, b) => b[1].size - a[1].size).slice(0, 8);
             const lt = langs.reduce((a, [, v]) => a + v.size, 0) || 1;
             let x = 0;
@@ -168,8 +194,6 @@ jobs:
               ${pts.map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="${C1}"/>`).join('')}
             </svg>`;
 
-            fs.writeFileSync('dist/header.svg', header);
-            fs.writeFileSync('dist/footer.svg', footer);
             fs.writeFileSync('dist/stats.svg', stats);
             fs.writeFileSync('dist/top-langs.svg', langsSvg);
             fs.writeFileSync('dist/activity.svg', activity);
