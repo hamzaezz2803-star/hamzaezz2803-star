@@ -1,11 +1,11 @@
 <!-- ============ HEADER ============ -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0EA5E9,50:6366F1,100:A855F7&height=220&section=header&text=Hamza%20Ezzouek&fontSize=58&fontColor=ffffff&fontAlignY=36&desc=Full-Stack%20Web%20%26%20Mobile%20Developer%20%E2%80%A2%20Engineering%20Student&descSize=18&descAlignY=58&animation=fadeIn" width="100%" alt="Hamza Ezzouek"/>
+  <img src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/header.svg" width="100%" alt="Hamza Ezzouek"/>
 </p>
 
 <p align="center">
   <a href="https://portfolio-eta-liard-84.vercel.app/">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=6366F1&center=true&vCenter=true&width=600&lines=Full-Stack+Developer+%F0%9F%9A%80;Next.js+%7C+React+%7C+Node.js+%7C+Laravel;SaaS%2C+CRM+%26+AI+workflows+%F0%9F%A4%96;Mobile+with+React+Native+%26+Flutter+%F0%9F%93%B1;Open+to+internships+%26+jobs+%E2%9C%A8" alt="Typing SVG"/>
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=6366F1&center=true&vCenter=true&width=750&lines=Full-Stack+Developer+%F0%9F%9A%80;Next.js+%7C+React+%7C+Node.js+%7C+Laravel;SaaS%2C+CRM+%26+AI+workflows+%F0%9F%A4%96;React+Native+%26+Flutter+%F0%9F%93%B1;Open+to+internships+%26+jobs+%E2%9C%A8" alt="Typing SVG"/>
   </a>
 </p>
 
@@ -131,8 +131,8 @@ const hamza = {
 ## 📈 Statistiques GitHub
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=hamzaezz2803-star&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=6366F1&icon_color=0EA5E9&text_color=C9D1D9&count_private=true&include_all_commits=true" alt="GitHub Stats"/>
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hamzaezz2803-star&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=C9D1D9&langs_count=8" alt="Top Languages"/>
+  <img width="49%" src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/stats.svg" alt="GitHub Stats"/>
+  <img width="49%" src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/top-langs.svg" alt="Top Languages"/>
 </p>
 
 <p align="center">
@@ -140,7 +140,7 @@ const hamza = {
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=hamzaezz2803-star&bg_color=0D1117&color=C9D1D9&line=6366F1&point=0EA5E9&area=true&area_color=A855F7&hide_border=true" width="100%" alt="Activity Graph"/>
+  <img src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/activity.svg" width="100%" alt="Activity Graph"/>
 </p>
 
 ---
@@ -180,5 +180,5 @@ const hamza = {
 
 <!-- ============ FOOTER ============ -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:A855F7,50:6366F1,100:0EA5E9&height=120&section=footer" width="100%" alt="footer"/>
+  <img src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/footer.svg" width="100%" alt="footer"/>
 </p>
