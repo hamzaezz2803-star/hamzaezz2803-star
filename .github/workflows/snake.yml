@@ -1,4 +1,4 @@
-name: Generate snake animation
+name: Generate profile assets
 
 on:
   schedule:
@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      # 1) Serpent des contributions
       - name: Generate snake SVGs
         uses: Platane/snk@v3
         with:
@@ -23,6 +24,158 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark&color_snake=#6366F1&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
 
+      # 2) Bannière, stats, langages et graphique d'activité (générés ici, aucun service externe)
+      - name: Generate header, stats, languages & activity SVGs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            fs.mkdirSync('dist', { recursive: true });
+            const login = context.repo.owner;
+
+            const BG = '#0D1117', BORDER = '#30363D', TEXT = '#C9D1D9', MUTED = '#8B949E';
+            const C1 = '#0EA5E9', C2 = '#6366F1', C3 = '#A855F7';
+            const FONT = "'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif";
+            const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+            const fmt = n => n >= 1000 ? (n/1000).toFixed(1).replace(/\.0$/,'') + 'k' : String(n);
+
+            // ---------- Données GitHub ----------
+            const q = `query($login:String!){ user(login:$login){
+              name login
+              followers { totalCount }
+              pullRequests { totalCount }
+              issues { totalCount }
+              contributionsCollection {
+                totalCommitContributions restrictedContributionsCount
+                contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } }
+              }
+              repositories(ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC, first: 100) {
+                totalCount
+                nodes { stargazerCount languages(first: 10, orderBy: {field: SIZE, direction: DESC}) { edges { size node { name color } } } }
+              }
+            } }`;
+            const { user } = await github.graphql(q, { login });
+            const cc = user.contributionsCollection;
+            const repos = user.repositories.nodes;
+            const stars = repos.reduce((a, r) => a + r.stargazerCount, 0);
+            const commits = cc.totalCommitContributions + cc.restrictedContributionsCount;
+            const days = cc.contributionCalendar.weeks.flatMap(w => w.contributionDays);
+
+            // ---------- Bannière (header + footer) ----------
+            const header = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="230" viewBox="0 0 1200 230">
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="${C1}"/><stop offset=".5" stop-color="${C2}"/><stop offset="1" stop-color="${C3}"/>
+                </linearGradient>
+                <style>
+                  .t{font:800 64px ${FONT};fill:#fff;animation:f 1.2s ease-out both}
+                  .d{font:500 22px ${FONT};fill:#E0E7FF;animation:f 1.2s .4s ease-out both}
+                  @keyframes f{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+                  .w{animation:m 8s ease-in-out infinite alternate}
+                  @keyframes m{from{transform:translateX(0)}to{transform:translateX(-60px)}}
+                </style>
+              </defs>
+              <path fill="url(#g)" d="M0 0H1200V170C1080 210 960 150 820 170S560 230 420 200 160 150 0 190Z"/>
+              <g class="w" opacity=".35"><path fill="url(#g)" d="M0 180C140 150 280 230 440 205S700 150 860 185 1100 215 1260 180V230H0Z"/></g>
+              <text class="t" x="600" y="98" text-anchor="middle">${esc(user.name || 'Hamza Ezzouek')}</text>
+              <text class="d" x="600" y="140" text-anchor="middle">Full-Stack Web &amp; Mobile Developer • Engineering Student</text>
+            </svg>`;
+            const footer = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="120" viewBox="0 0 1200 120">
+              <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="${C3}"/><stop offset=".5" stop-color="${C2}"/><stop offset="1" stop-color="${C1}"/>
+              </linearGradient></defs>
+              <path fill="url(#g)" d="M0 50C160 10 320 90 520 60S860 10 1020 45 1150 70 1200 55V120H0Z"/>
+            </svg>`;
+
+            // ---------- Carte statistiques ----------
+            const rows = [
+              ['⭐', 'Total Stars', stars],
+              ['📦', 'Public Repos', user.repositories.totalCount],
+              ['🔨', 'Commits (last year)', commits],
+              ['🔀', 'Pull Requests', user.pullRequests.totalCount],
+              ['❗', 'Issues', user.issues.totalCount],
+              ['👥', 'Followers', user.followers.totalCount],
+            ];
+            const total = cc.contributionCalendar.totalContributions;
+            const R = 48, CIRC = 2 * Math.PI * R;
+            const ratio = Math.min(total / 1000, 1);
+            const stats = `<svg xmlns="http://www.w3.org/2000/svg" width="450" height="200" viewBox="0 0 450 200">
+              <style>
+                .h{font:700 18px ${FONT};fill:${C2}} .l{font:500 14px ${FONT};fill:${TEXT}} .v{font:700 14px ${FONT};fill:${C1}}
+                .n{font:800 26px ${FONT};fill:${C3}} .s{font:500 11px ${FONT};fill:${MUTED}}
+                .r{animation:p 1.5s ease-out both} @keyframes p{from{stroke-dashoffset:${CIRC}}}
+                .row{animation:f .6s ease-out both} @keyframes f{from{opacity:0}}
+              </style>
+              <rect x=".5" y=".5" width="449" height="199" rx="10" fill="${BG}" stroke="${BORDER}"/>
+              <text class="h" x="22" y="34">${esc(user.name || login)}'s GitHub Stats</text>
+              ${rows.map((r, i) => `<g class="row" style="animation-delay:${i*0.12}s" transform="translate(22 ${62 + i*22})">
+                <text class="l" x="0" y="0">${r[0]}  ${r[1]}:</text><text class="v" x="230" y="0" text-anchor="end">${fmt(r[2])}</text></g>`).join('')}
+              <g transform="translate(360 108)">
+                <circle r="${R}" fill="none" stroke="${C2}" stroke-opacity=".2" stroke-width="7"/>
+                <circle class="r" r="${R}" fill="none" stroke="${C2}" stroke-width="7" stroke-linecap="round"
+                  stroke-dasharray="${CIRC}" stroke-dashoffset="${CIRC * (1 - Math.max(ratio, 0.04))}" transform="rotate(-90)"/>
+                <text class="n" y="8" text-anchor="middle">${fmt(total)}</text>
+                <text class="s" y="${R + 22}" text-anchor="middle">contributions / an</text>
+              </g>
+            </svg>`;
+
+            // ---------- Carte langages ----------
+            const langMap = {};
+            for (const r of repos) for (const e of r.languages.edges) {
+              const k = e.node.name;
+              langMap[k] = langMap[k] || { size: 0, color: e.node.color || '#8B949E' };
+              langMap[k].size += e.size;
+            }
+            const langs = Object.entries(langMap).sort((a, b) => b[1].size - a[1].size).slice(0, 8);
+            const lt = langs.reduce((a, [, v]) => a + v.size, 0) || 1;
+            let x = 0;
+            const bar = langs.map(([, v]) => { const w = v.size / lt * 406; const s = `<rect x="${x}" y="0" width="${w}" height="10" fill="${v.color}"/>`; x += w; return s; }).join('');
+            const list = langs.map(([n, v], i) => {
+              const cx = (i % 2) * 210, cy = Math.floor(i / 2) * 26;
+              return `<g transform="translate(${cx} ${cy})"><circle cx="6" cy="-4" r="6" fill="${v.color}"/>
+                <text class="l" x="20" y="0">${esc(n)} <tspan class="p">${(v.size / lt * 100).toFixed(1)}%</tspan></text></g>`;
+            }).join('');
+            const langsSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="450" height="200" viewBox="0 0 450 200">
+              <style>.h{font:700 18px ${FONT};fill:${C2}} .l{font:500 14px ${FONT};fill:${TEXT}} .p{fill:${MUTED}}</style>
+              <rect x=".5" y=".5" width="449" height="199" rx="10" fill="${BG}" stroke="${BORDER}"/>
+              <text class="h" x="22" y="34">Most Used Languages</text>
+              <clipPath id="c"><rect width="406" height="10" rx="5"/></clipPath>
+              <g transform="translate(22 52)" clip-path="url(#c)">${bar || `<rect width="406" height="10" fill="${BORDER}"/>`}</g>
+              <g transform="translate(22 96)">${list || `<text class="l">Aucun dépôt public pour le moment</text>`}</g>
+            </svg>`;
+
+            // ---------- Graphique d'activité (31 derniers jours) ----------
+            const last = days.slice(-31);
+            const W = 1200, H = 360, PL = 60, PR = 30, PT = 70, PB = 60;
+            const max = Math.max(4, ...last.map(d => d.contributionCount));
+            const px = i => PL + i * (W - PL - PR) / (last.length - 1);
+            const py = v => PT + (H - PT - PB) * (1 - v / max);
+            const pts = last.map((d, i) => [px(i), py(d.contributionCount)]);
+            const line = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+            const area = `${line} L${px(last.length - 1)} ${H - PB} L${PL} ${H - PB} Z`;
+            const grid = [0, .25, .5, .75, 1].map(f => { const v = Math.round(max * f); const y = py(v);
+              return `<line x1="${PL}" x2="${W - PR}" y1="${y}" y2="${y}" stroke="${BORDER}" stroke-dasharray="3 4"/><text class="a" x="${PL - 10}" y="${y + 4}" text-anchor="end">${v}</text>`; }).join('');
+            const xl = last.map((d, i) => i % 3 ? '' : `<text class="a" x="${px(i)}" y="${H - PB + 22}" text-anchor="middle">${d.date.slice(8)}/${d.date.slice(5, 7)}</text>`).join('');
+            const activity = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+              <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${C3}" stop-opacity=".55"/><stop offset="1" stop-color="${C3}" stop-opacity="0"/></linearGradient></defs>
+              <style>.h{font:700 22px ${FONT};fill:${C2}} .a{font:500 13px ${FONT};fill:${MUTED}}
+                .ln{stroke-dasharray:4000;animation:d 2s ease-out both} @keyframes d{from{stroke-dashoffset:4000}}</style>
+              <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="12" fill="${BG}" stroke="${BORDER}"/>
+              <text class="h" x="${W / 2}" y="40" text-anchor="middle">${esc(user.name || login)}'s Contribution Graph (31 days)</text>
+              ${grid}${xl}
+              <path d="${area}" fill="url(#ag)"/>
+              <path class="ln" d="${line}" fill="none" stroke="${C2}" stroke-width="3" stroke-linejoin="round"/>
+              ${pts.map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="${C1}"/>`).join('')}
+            </svg>`;
+
+            fs.writeFileSync('dist/header.svg', header);
+            fs.writeFileSync('dist/footer.svg', footer);
+            fs.writeFileSync('dist/stats.svg', stats);
+            fs.writeFileSync('dist/top-langs.svg', langsSvg);
+            fs.writeFileSync('dist/activity.svg', activity);
+            core.info('Assets generated for ' + login);
+
+      # 3) Publication sur la branche "output"
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
