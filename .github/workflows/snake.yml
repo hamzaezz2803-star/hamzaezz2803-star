@@ -24,9 +24,13 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark&color_snake=#6366F1&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
 
+      # Le conteneur du serpent crée dist/ en root : on rend le dossier modifiable
+      - name: Fix dist permissions
+        run: sudo chown -R "$(id -u):$(id -g)" dist
+
       # 2) Bannière, stats, langages et graphique d'activité (générés ici, aucun service externe)
       - name: Generate header, stats, languages & activity SVGs
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const fs = require('fs');
