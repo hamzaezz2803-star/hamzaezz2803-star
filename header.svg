@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="230" viewBox="0 0 1200 230">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0EA5E9"/><stop offset=".5" stop-color="#6366F1"/><stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+    <style>
+      .t{font:800 64px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#fff;animation:f 1.2s ease-out both}
+      .d{font:500 22px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#E0E7FF;animation:f 1.2s .4s ease-out both}
+      @keyframes f{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+      .w{animation:m 8s ease-in-out infinite alternate}
+      @keyframes m{from{transform:translateX(0)}to{transform:translateX(-60px)}}
+    </style>
+  </defs>
+  <path fill="url(#g)" d="M0 0H1200V170C1080 210 960 150 820 170S560 230 420 200 160 150 0 190Z"/>
+  <g class="w" opacity=".35"><path fill="url(#g)" d="M0 180C140 150 280 230 440 205S700 150 860 185 1100 215 1260 180V230H0Z"/></g>
+  <text class="t" x="600" y="98" text-anchor="middle">Hamza Ez</text>
+  <text class="d" x="600" y="140" text-anchor="middle">Full-Stack Web &amp; Mobile Developer • Engineering Student</text>
+</svg>

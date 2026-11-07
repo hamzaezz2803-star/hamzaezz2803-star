@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="200" viewBox="0 0 450 200">
+  <style>.h{font:700 18px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#6366F1} .l{font:500 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#C9D1D9} .p{fill:#8B949E}</style>
+  <rect x=".5" y=".5" width="449" height="199" rx="10" fill="#0D1117" stroke="#30363D"/>
+  <text class="h" x="22" y="34">Most Used Languages</text>
+  <clipPath id="c"><rect width="406" height="10" rx="5"/></clipPath>
+  <g transform="translate(22 52)" clip-path="url(#c)"><rect x="0" y="0" width="266.3884187458857" height="10" fill="#f1e05a"/><rect x="266.3884187458857" y="0" width="128.1455837406598" height="10" fill="#3178c6"/><rect x="394.5340024865455" y="0" width="5.846792877889222" height="10" fill="#663399"/><rect x="400.38079536443473" y="0" width="4.023138210598388" height="10" fill="#8B949E"/><rect x="404.40393357503314" y="0" width="0.6497925787906779" height="10" fill="#8B949E"/><rect x="405.0537261538238" y="0" width="0.5117384624221964" height="10" fill="#e34c26"/><rect x="405.565464616246" y="0" width="0.4345353837539971" height="10" fill="#8B949E"/></g>
+  <g transform="translate(22 96)"><g transform="translate(0 0)"><circle cx="6" cy="-4" r="6" fill="#f1e05a"/>
+    <text class="l" x="20" y="0">JavaScript <tspan class="p">65.6%</tspan></text></g><g transform="translate(210 0)"><circle cx="6" cy="-4" r="6" fill="#3178c6"/>
+    <text class="l" x="20" y="0">TypeScript <tspan class="p">31.6%</tspan></text></g><g transform="translate(0 26)"><circle cx="6" cy="-4" r="6" fill="#663399"/>
+    <text class="l" x="20" y="0">CSS <tspan class="p">1.4%</tspan></text></g><g transform="translate(210 26)"><circle cx="6" cy="-4" r="6" fill="#8B949E"/>
+    <text class="l" x="20" y="0">PLpgSQL <tspan class="p">1.0%</tspan></text></g><g transform="translate(0 52)"><circle cx="6" cy="-4" r="6" fill="#8B949E"/>
+    <text class="l" x="20" y="0">Batchfile <tspan class="p">0.2%</tspan></text></g><g transform="translate(210 52)"><circle cx="6" cy="-4" r="6" fill="#e34c26"/>
+    <text class="l" x="20" y="0">HTML <tspan class="p">0.1%</tspan></text></g><g transform="translate(0 78)"><circle cx="6" cy="-4" r="6" fill="#8B949E"/>
+    <text class="l" x="20" y="0">PowerShell <tspan class="p">0.1%</tspan></text></g></g>
+</svg>
