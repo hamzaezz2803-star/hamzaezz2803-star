@@ -1,11 +1,11 @@
 <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:0EA5E9,50:6366F1,100:A855F7&text=Hamza%20Ezzouek&fontColor=FFFFFF&fontSize=56&fontAlignY=36&desc=Full-Stack%20Web%20%26%20Mobile%20Developer%20%E2%80%A2%20Casablanca&descSize=18&descAlignY=58&animation=fadeIn" width="100%" alt="Hamza Ezzouek"/>
+  <img src="./assets/banner.webp" width="100%" alt="Hamza Ezzouek — Software Developer"/>
 </p>
 
 <p align="center">
   <a href="https://portfolio-eta-liard-84.vercel.app/">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=2800&pause=900&color=A5B4FC&center=true&vCenter=true&width=640&lines=Je+construis+des+SaaS+de+bout+en+bout.;Next.js+%C2%B7+React+%C2%B7+Node.js+%C2%B7+Laravel+%C2%B7+Supabase;CRM%2C+automatisations+%26+int%C3%A9gration+IA;Ouvert+aux+stages+%26+opportunit%C3%A9s+Full-Stack" alt="Typing SVG"/>
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=2800&pause=900&color=3B82F6&center=true&vCenter=true&width=640&lines=Je+construis+des+SaaS+de+bout+en+bout.;Next.js+%C2%B7+React+%C2%B7+Node.js+%C2%B7+Laravel+%C2%B7+Supabase;CRM%2C+automatisations+%26+int%C3%A9gration+IA;Ouvert+aux+stages+%26+opportunit%C3%A9s+Full-Stack" alt="Typing SVG"/>
   </a>
 </p>
 
@@ -237,5 +237,5 @@ Plateforme d'adoption avec back-office, réalisée en stage (remote, France).
 
 <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&section=footer&height=120&color=0:0EA5E9,50:6366F1,100:A855F7" width="100%" alt="footer"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&section=footer&height=120&color=0:0A0F1C,50:1E3A8A,100:2F80ED" width="100%" alt="footer"/>
 </p>
