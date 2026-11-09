@@ -1,6 +1,6 @@
 <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
 <p align="center">
-  <img src="./github/Bannière développeur nocturne Hamza Ez.png" width="100%" alt="Hamza Ezzouek — Software Developer"/>
+  <img src="./.github/Banni%C3%A8re%20d%C3%A9veloppeur%20nocturne%20Hamza%20Ez.png" width="100%" alt="Hamza Ezzouek — Software Developer"/>
 </p>
 
 <p align="center">
