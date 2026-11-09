@@ -1,6 +1,6 @@
 <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
 <p align="center">
-  <img src="./assets/banner.webp" width="100%" alt="Hamza Ezzouek — Software Developer"/>
+  <img src="./github/Bannière développeur nocturne Hamza Ez.png" width="100%" alt="Hamza Ezzouek — Software Developer"/>
 </p>
 
 <p align="center">
