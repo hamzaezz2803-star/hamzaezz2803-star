@@ -1,151 +1,204 @@
-<!-- ============ HEADER ============ -->
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/header.svg" width="100%" alt="Hamza Ezzouek"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:0EA5E9,50:6366F1,100:A855F7&text=Hamza%20Ezzouek&fontColor=FFFFFF&fontSize=56&fontAlignY=36&desc=Full-Stack%20Web%20%26%20Mobile%20Developer%20%E2%80%A2%20Casablanca&descSize=18&descAlignY=58&animation=fadeIn" width="100%" alt="Hamza Ezzouek"/>
 </p>
 
 <p align="center">
   <a href="https://portfolio-eta-liard-84.vercel.app/">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=6366F1&center=true&vCenter=true&width=750&lines=Full-Stack+Developer+%F0%9F%9A%80;Next.js+%7C+React+%7C+Node.js+%7C+Laravel;SaaS%2C+CRM+%26+AI+workflows+%F0%9F%A4%96;React+Native+%26+Flutter+%F0%9F%93%B1;Open+to+internships+%26+jobs+%E2%9C%A8" alt="Typing SVG"/>
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=2800&pause=900&color=A5B4FC&center=true&vCenter=true&width=640&lines=Je+construis+des+SaaS+de+bout+en+bout.;Next.js+%C2%B7+React+%C2%B7+Node.js+%C2%B7+Laravel+%C2%B7+Supabase;CRM%2C+automatisations+%26+int%C3%A9gration+IA;Ouvert+aux+stages+%26+opportunit%C3%A9s+Full-Stack" alt="Typing SVG"/>
   </a>
 </p>
 
 <p align="center">
-  <a href="https://portfolio-eta-liard-84.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-6366F1?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
-  <a href="https://www.linkedin.com/in/HamzaEzzouek"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="mailto:hamzaezz2803@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
-  <a href="https://github.com/hamzaezz2803-star"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+  <a href="https://portfolio-eta-liard-84.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-0D1117?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
+  <a href="https://www.linkedin.com/in/HamzaEzzouek"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"/></a>
+  <a href="mailto:hamzaezz2803@gmail.com"><img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Email"/></a>
+  <img src="https://img.shields.io/badge/Open%20to%20work-0D1117?style=for-the-badge&logo=checkmarx&logoColor=22C55E" alt="Open to work"/>
 </p>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=hamzaezz2803-star&label=Profile%20views&color=6366F1&style=flat-square" alt="Profile views"/>
-  <img src="https://img.shields.io/badge/📍-Casablanca%2C%20Maroc-0EA5E9?style=flat-square" alt="Location"/>
-  <img src="https://img.shields.io/badge/Status-Open%20to%20work-22C55E?style=flat-square" alt="Open to work"/>
-</p>
+<br/>
 
----
+<!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+<table>
+<tr>
+<td width="55%" valign="top">
 
-## 👨‍💻 À propos de moi
+### Bonjour, je suis Hamza 👋
+
+Développeur **Full-Stack Web & Mobile** et élève ingénieur en **Sciences des Données & Développement Informatique** à l'ESTEM.
+
+Je conçois des produits **complets et évolutifs** — du schéma de base de données jusqu'à l'interface — avec un focus sur les **SaaS**, les **CRM** et l'**intégration de l'IA** dans les workflows métier.
+
+- 🔭 Dernier projet : **Qarizmi OS**, SaaS modulaire (CRM, IA, automatisations)
+- 🌱 En ce moment : Next.js App Router, Supabase RLS, LLMs
+- 🌍 Arabe · Français · Anglais
+- 📍 Casablanca, Maroc
+
+</td>
+<td width="45%" valign="top">
 
 ```ts
 const hamza = {
-  role:       "Full-Stack Web & Mobile Developer",
-  education:  "Cycle Ingénieur — Sciences des Données & Développement Informatique @ ESTEM",
-  location:   "Casablanca, Maroc 🇲🇦",
-  currently:  "Building SaaS platforms with Next.js, Supabase & AI",
-  focus:      ["Web apps scalables", "CRM & automatisations", "Intégration IA"],
-  languages:  ["Arabe", "Français", "Anglais"],
-  lookingFor: "Stage ou emploi en développement Full-Stack",
+  role: "Full-Stack Developer",
+  stack: {
+    front:  ["Next.js", "React", "TS"],
+    back:   ["Node.js", "Laravel", "Spring"],
+    data:   ["Supabase", "MySQL", "MongoDB"],
+    mobile: ["React Native", "Flutter"],
+  },
+  ai: ["Groq", "LLM workflows"],
+  openTo: ["Stage", "CDI", "Freelance"],
 };
 ```
 
-- 🚀 Je conçois des solutions web **complètes et évolutives**, du design de la base de données jusqu'à l'interface.
-- 🤖 Dernière expérience : **Qarizmi OS**, une plateforme SaaS modulaire (CRM, workflows IA, automatisations Slack / WhatsApp / Google).
-- 📱 Bases solides en mobile avec **React Native** et **Flutter**.
-- 💬 Parlez-moi de : **Next.js, React, Node.js, Laravel, Spring Boot, Supabase**.
+</td>
+</tr>
+</table>
 
----
+<!-- ═══════════════════════════ FEATURED ═══════════════════════════ -->
+## ⚡ Projet phare
 
+<table>
+<tr>
+<td>
+
+#### 🧠 Qarizmi OS — Plateforme SaaS modulaire
+<sub>Qarizmi · Stage Full-Stack · 2026</sub>
+
+Plateforme multi-tenant regroupant **CRM**, **workflows IA** et **automatisations** (Slack, WhatsApp, Google).
+
+- Module CRM complet : gestion des leads + **extraction de données par IA** (Groq)
+- **Server Actions** sécurisées, isolation des données via **Supabase RLS multi-tenant**
+- Qualité : tests **Vitest** + pipeline **CI** GitHub Actions
+
+<p>
+  <img src="https://img.shields.io/badge/Next.js%2016-000000?style=flat-square&logo=nextdotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Tailwind%20v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Groq-F55036?style=flat-square&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white"/>
+</p>
+
+</td>
+</tr>
+</table>
+
+<!-- ═══════════════════════════ STACK ═══════════════════════════ -->
 ## 🛠️ Stack technique
-
-<p align="center"><b>Frontend & Mobile</b></p>
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,tailwind,bootstrap,flutter,dart&perline=10" alt="Frontend"/>
-</p>
-
-<p align="center"><b>Backend</b></p>
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=nodejs,express,php,laravel,java,spring,cs&perline=10" alt="Backend"/>
-</p>
-
-<p align="center"><b>Bases de données & Cloud</b></p>
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=mysql,mongodb,supabase,vercel&perline=10" alt="Databases"/>
-</p>
-
-<p align="center"><b>DevOps & Outils</b></p>
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=git,github,githubactions,docker,vitest,postman,vscode,figma&perline=10" alt="Tools"/>
-</p>
-
----
-
-## 💼 Expérience
 
 <table>
   <tr>
-    <td width="50%" valign="top">
-      <h3>🏢 Qarizmi</h3>
-      <sub><b>Développeur Full-Stack</b> · Stage 4ème année · 06/2026 – 09/2026</sub>
-      <br/><br/>
-      ▸ Développement de <b>Qarizmi OS</b>, SaaS modulaire (CRM, IA, automatisations)<br/>
-      ▸ Module CRM : leads, extraction de données par IA (<b>Groq</b>)<br/>
-      ▸ Server actions sécurisées, <b>Supabase + RLS multi-tenant</b><br/>
-      ▸ <b>Next.js 16</b> App Router, TypeScript, Tailwind v4, Vitest, CI
-    </td>
-    <td width="50%" valign="top">
-      <h3>🏢 Muntadaacom</h3>
-      <sub><b>Stage PFE</b> · Licence Génie Logiciel · 04/2025 – 07/2025</sub>
-      <br/><br/>
-      ▸ Projets web & mobile autour des nouvelles architectures logicielles<br/>
-      ▸ Application web de <b>gestion des ressources humaines</b> (en binôme)
-    </td>
+    <td align="right" width="150"><b>Frontend</b></td>
+    <td><img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,tailwind,html,css,bootstrap&theme=dark" alt="Frontend"/></td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
-      <h3>🎓 FSJES Casablanca</h3>
-      <sub><b>Développeur Web</b> · 11/2024 – 02/2025</sub>
-      <br/><br/>
-      ▸ Site web du Laboratoire d'Études Transversales en Droit, Économie et Management des Affaires
-    </td>
-    <td width="50%" valign="top">
-      <h3>🌍 All Formations</h3>
-      <sub><b>Stage PFE</b> · Remote (France) · 02/2024 – 05/2024</sub>
-      <br/><br/>
-      ▸ Site d'adoption d'animaux : <b>React, Tailwind, Laravel, MySQL</b><br/>
-      ▸ UI, backend performant, base de données & versioning Git
-    </td>
+    <td align="right"><b>Mobile</b></td>
+    <td><img src="https://skillicons.dev/icons?i=react,flutter,dart&theme=dark" alt="Mobile"/></td>
+  </tr>
+  <tr>
+    <td align="right"><b>Backend</b></td>
+    <td><img src="https://skillicons.dev/icons?i=nodejs,express,php,laravel,java,spring,cs&theme=dark" alt="Backend"/></td>
+  </tr>
+  <tr>
+    <td align="right"><b>Data & Cloud</b></td>
+    <td><img src="https://skillicons.dev/icons?i=supabase,mysql,mongodb,vercel&theme=dark" alt="Data"/></td>
+  </tr>
+  <tr>
+    <td align="right"><b>DevOps & Outils</b></td>
+    <td><img src="https://skillicons.dev/icons?i=git,github,githubactions,docker,vitest,postman,vscode,figma&theme=dark" alt="Tools"/></td>
   </tr>
 </table>
 
----
+<!-- ═══════════════════════════ EXPERIENCE ═══════════════════════════ -->
+## 💼 Expérience
 
-## 🚀 Projets réalisés
+| Période | Entreprise | Rôle | Points clés |
+|:--|:--|:--|:--|
+| **06/2026 – 09/2026** | **Qarizmi** | Développeur Full-Stack · Stage | SaaS modulaire, CRM + IA, Supabase RLS multi-tenant, Next.js 16 |
+| **04/2025 – 07/2025** | **Muntadaacom** | Stage PFE · Licence GL | Application web de gestion RH, architectures logicielles modernes |
+| **11/2024 – 02/2025** | **FSJES Casablanca** | Développeur Web | Site du Laboratoire d'Études Transversales en Droit, Économie & Management |
+| **02/2024 – 05/2024** | **All Formations** <sub>(Remote · FR)</sub> | Stage PFE | Plateforme d'adoption d'animaux — React, Tailwind, Laravel, MySQL |
 
-| Projet | Stack | Date |
-|:--|:--|:--:|
-| 📊 **Statistiques & bilans – Plan Comptable Marocain** (web + mobile) | ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat-square) ![Express](https://img.shields.io/badge/-Express-000000?logo=express&logoColor=white&style=flat-square) ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white&style=flat-square) | 2026 |
-| 🏫 **Application de gestion d'école** | ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat-square) ![Spring Boot](https://img.shields.io/badge/-Spring%20Boot-6DB33F?logo=springboot&logoColor=white&style=flat-square) ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white&style=flat-square) | 2026 |
-| 📰 **App mobile d'actualités** | ![Flutter](https://img.shields.io/badge/-Flutter-02569B?logo=flutter&logoColor=white&style=flat-square) ![REST](https://img.shields.io/badge/-REST%20API-FF6C37?logo=postman&logoColor=white&style=flat-square) | 2026 |
-| 🎓 **Gestion des formations** | ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white&style=flat-square) ![Express](https://img.shields.io/badge/-Express-000000?logo=express&logoColor=white&style=flat-square) ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat-square) ![Node](https://img.shields.io/badge/-Node.js-339933?logo=nodedotjs&logoColor=white&style=flat-square) | 2025–26 |
-| 🧑‍🎓 **Gestion des étudiants** (Web Services) | ![Java](https://img.shields.io/badge/-JAX--RS%20%2F%20SOAP-ED8B00?logo=openjdk&logoColor=white&style=flat-square) ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white&style=flat-square) | 2025–26 |
-| 🐾 **Site d'adoption d'animaux** | ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat-square) ![Laravel](https://img.shields.io/badge/-Laravel-FF2D20?logo=laravel&logoColor=white&style=flat-square) ![Tailwind](https://img.shields.io/badge/-Tailwind-06B6D4?logo=tailwindcss&logoColor=white&style=flat-square) | 2024 |
+<!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
+## 🚀 Projets
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+#### 📊 Statistiques & Bilans — PCM
+Tableaux de bord et bilans financiers selon le **Plan Comptable Marocain**, en web et mobile.
+
+<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
+
+</td>
+<td width="50%" valign="top">
+
+#### 🏫 Gestion d'école
+Application de gestion scolaire : élèves, classes, enseignants et notes.
+
+<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### 📰 App mobile d'actualités
+Application Flutter consommant une **API REST** d'actualités en temps réel.
+
+<img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white"/> <img src="https://img.shields.io/badge/REST%20API-FF6C37?style=flat-square&logo=postman&logoColor=white"/>
+
+</td>
+<td width="50%" valign="top">
+
+#### 🎓 Gestion des formations
+Plateforme full-stack de gestion des formations, inscriptions et sessions.
+
+<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### 🧑‍🎓 Gestion des étudiants
+Services web **REST (JAX-RS)** et **SOAP** pour la gestion des étudiants.
+
+<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/JAX--RS%20%2F%20SOAP-5C2D91?style=flat-square"/> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
+
+</td>
+<td width="50%" valign="top">
+
+#### 🐾 Adoption d'animaux
+Plateforme d'adoption avec back-office, réalisée en stage (remote, France).
+
+<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white"/> <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
+
+</td>
+</tr>
+</table>
 
 <p align="center">
-  <a href="https://portfolio-eta-liard-84.vercel.app/">
-    <img src="https://img.shields.io/badge/👉%20Voir%20tous%20mes%20projets%20sur%20mon%20portfolio-6366F1?style=for-the-badge" alt="Portfolio"/>
-  </a>
+  <a href="https://portfolio-eta-liard-84.vercel.app/"><img src="https://img.shields.io/badge/Voir%20tous%20les%20projets%20%E2%86%92-6366F1?style=for-the-badge" alt="Portfolio"/></a>
 </p>
 
----
-
-## 📈 Statistiques GitHub
+<!-- ═══════════════════════════ STATS ═══════════════════════════ -->
+## 📈 Activité GitHub
 
 <p align="center">
-  <img width="49%" src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/stats.svg" alt="GitHub Stats"/>
-  <img width="49%" src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/top-langs.svg" alt="Top Languages"/>
+  <img height="170" src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/stats.svg" alt="GitHub Stats"/>
+  <img height="170" src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/top-langs.svg" alt="Top Languages"/>
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=hamzaezz2803-star&theme=tokyonight&hide_border=true&background=0D1117&ring=6366F1&fire=A855F7&currStreakLabel=0EA5E9&sideLabels=C9D1D9&dates=8B949E" alt="GitHub Streak"/>
+  <img src="https://streak-stats.demolab.com?user=hamzaezz2803-star&theme=tokyonight&hide_border=true&background=0D1117&ring=6366F1&fire=A855F7&currStreakLabel=A5B4FC&sideLabels=C9D1D9&dates=8B949E" alt="GitHub Streak"/>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/activity.svg" width="100%" alt="Activity Graph"/>
 </p>
-
----
-
-## 🐍 Contributions
 
 <p align="center">
   <picture>
@@ -155,30 +208,34 @@ const hamza = {
   </picture>
 </p>
 
----
-
+<!-- ═══════════════════════════ EDUCATION ═══════════════════════════ -->
 ## 🎓 Formation
 
-- 🎓 **ESTEM** — Cycle Ingénieur, Sciences des Données & Développement Informatique *(2025 – 2026)*
-- 🎓 **ESTEM** — Licence Professionnelle, Génie Logiciel *(2024 – 2025)*
-- 🎓 **CFP Elhassania** — Bac+2 Développement Digital, option Web Full-Stack *(2023 – 2024)*
+| Année | Diplôme | École |
+|:--|:--|:--|
+| 2025 – 2026 | Cycle Ingénieur — Sciences des Données & Développement Informatique | **ESTEM** |
+| 2024 – 2025 | Licence Professionnelle — Génie Logiciel | **ESTEM** |
+| 2023 – 2024 | Bac+2 Développement Digital, option Web Full-Stack | **CFP Elhassania** |
 
----
-
+<!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
 ## 🤝 Travaillons ensemble
 
 <p align="center">
-  Je suis <b>ouvert aux opportunités de stage et d'emploi</b> en développement Full-Stack.<br/>
-  N'hésitez pas à me contacter 👇
+  Je suis <b>ouvert aux opportunités de stage, d'emploi et de freelance</b> en développement Full-Stack.<br/>
+  Un projet, une question ou juste envie d'échanger ? Écrivez-moi.
 </p>
 
 <p align="center">
-  <a href="mailto:hamzaezz2803@gmail.com"><img src="https://img.shields.io/badge/hamzaezz2803@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
-  <a href="https://portfolio-eta-liard-84.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-6366F1?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio"/></a>
-  <a href="https://www.linkedin.com/in/HamzaEzzouek"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="mailto:hamzaezz2803@gmail.com"><img src="https://img.shields.io/badge/hamzaezz2803@gmail.com-0D1117?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Email"/></a>
+  <a href="https://www.linkedin.com/in/HamzaEzzouek"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"/></a>
+  <a href="https://portfolio-eta-liard-84.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-0D1117?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
 </p>
 
-<!-- ============ FOOTER ============ -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/hamzaezz2803-star/hamzaezz2803-star/output/footer.svg" width="100%" alt="footer"/>
+  <img src="https://komarev.com/ghpvc/?username=hamzaezz2803-star&label=Profile%20views&color=6366F1&style=flat-square" alt="Profile views"/>
+</p>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&section=footer&height=120&color=0:0EA5E9,50:6366F1,100:A855F7" width="100%" alt="footer"/>
 </p>
