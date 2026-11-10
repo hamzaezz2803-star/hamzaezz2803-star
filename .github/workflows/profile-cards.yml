@@ -1,0 +1,29 @@
+name: Profile cards
+
+# Redraws the README cards from live GitHub data: daily, on every push to main, and on demand.
+on:
+  schedule:
+    - cron: "23 5 * * *"
+  push:
+    branches: [main]
+    paths-ignore: ["cards/**", "data/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r scripts/requirements.txt
+      - run: python scripts/fetch_contributions.py
+      - run: python scripts/render_cards.py
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh profile cards [skip ci]"
+          file_pattern: "cards/*.svg data/contributions.json"
