@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="200" viewBox="0 0 450 200">
+  <style>
+    .h{font:700 18px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#6366F1} .l{font:500 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#C9D1D9} .v{font:700 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#0EA5E9}
+    .n{font:800 26px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#A855F7} .s{font:500 11px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#8B949E}
+    .r{animation:p 1.5s ease-out both} @keyframes p{from{stroke-dashoffset:301.59289474462014}}
+    .row{animation:f .6s ease-out both} @keyframes f{from{opacity:0}}
+  </style>
+  <rect x=".5" y=".5" width="449" height="199" rx="10" fill="#0D1117" stroke="#30363D"/>
+  <text class="h" x="22" y="34">Hamza Ez's GitHub Stats</text>
+  <g class="row" style="animation-delay:0s" transform="translate(22 62)">
+    <text class="l" x="0" y="0">⭐  Total Stars:</text><text class="v" x="230" y="0" text-anchor="end">0</text></g><g class="row" style="animation-delay:0.12s" transform="translate(22 84)">
+    <text class="l" x="0" y="0">📦  Public Repos:</text><text class="v" x="230" y="0" text-anchor="end">8</text></g><g class="row" style="animation-delay:0.24s" transform="translate(22 106)">
+    <text class="l" x="0" y="0">🔨  Commits:</text><text class="v" x="230" y="0" text-anchor="end">189</text></g><g class="row" style="animation-delay:0.36s" transform="translate(22 128)">
+    <text class="l" x="0" y="0">🔀  Pull Requests:</text><text class="v" x="230" y="0" text-anchor="end">1</text></g><g class="row" style="animation-delay:0.48s" transform="translate(22 150)">
+    <text class="l" x="0" y="0">❗  Issues:</text><text class="v" x="230" y="0" text-anchor="end">0</text></g><g class="row" style="animation-delay:0.6s" transform="translate(22 172)">
+    <text class="l" x="0" y="0">👥  Followers:</text><text class="v" x="230" y="0" text-anchor="end">1</text></g>
+  <g transform="translate(360 108)">
+    <circle r="48" fill="none" stroke="#6366F1" stroke-opacity=".2" stroke-width="7"/>
+    <circle class="r" r="48" fill="none" stroke="#6366F1" stroke-width="7" stroke-linecap="round"
+      stroke-dasharray="301.59289474462014" stroke-dashoffset="241.5759086904407" transform="rotate(-90)"/>
+    <text class="n" y="8" text-anchor="middle">199</text>
+    <text class="s" y="70" text-anchor="middle">contributions / an</text>
+  </g>
+</svg>
