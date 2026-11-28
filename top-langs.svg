@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="200" viewBox="0 0 450 200">
+  <style>.h{font:700 18px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#6366F1} .l{font:500 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;fill:#C9D1D9} .p{fill:#8B949E}</style>
+  <rect x=".5" y=".5" width="449" height="199" rx="10" fill="#0D1117" stroke="#30363D"/>
+  <text class="h" x="22" y="34">Most Used Languages</text>
+  <clipPath id="c"><rect width="406" height="10" rx="5"/></clipPath>
+  <g transform="translate(22 52)" clip-path="url(#c)"><rect x="0" y="0" width="275.5959122728979" height="10" fill="#3178c6"/><rect x="275.5959122728979" y="0" width="105.0359393623052" height="10" fill="#f1e05a"/><rect x="380.63185163520313" y="0" width="10.96251720553331" height="10" fill="#8B949E"/><rect x="391.5943688407364" y="0" width="8.116697338372965" height="10" fill="#663399"/><rect x="399.71106617910937" y="0" width="3.540251060407718" height="10" fill="#e34c26"/><rect x="403.2513172395171" y="0" width="2.347744396696733" height="10" fill="#3572A5"/><rect x="405.59906163621383" y="0" width="0.24026565978184922" height="10" fill="#8B949E"/><rect x="405.8393272959957" y="0" width="0.16067270400428119" height="10" fill="#8B949E"/></g>
+  <g transform="translate(22 96)"><g transform="translate(0 0)"><circle cx="6" cy="-4" r="6" fill="#3178c6"/>
+    <text class="l" x="20" y="0">TypeScript <tspan class="p">67.9%</tspan></text></g><g transform="translate(210 0)"><circle cx="6" cy="-4" r="6" fill="#f1e05a"/>
+    <text class="l" x="20" y="0">JavaScript <tspan class="p">25.9%</tspan></text></g><g transform="translate(0 26)"><circle cx="6" cy="-4" r="6" fill="#8B949E"/>
+    <text class="l" x="20" y="0">PLpgSQL <tspan class="p">2.7%</tspan></text></g><g transform="translate(210 26)"><circle cx="6" cy="-4" r="6" fill="#663399"/>
+    <text class="l" x="20" y="0">CSS <tspan class="p">2.0%</tspan></text></g><g transform="translate(0 52)"><circle cx="6" cy="-4" r="6" fill="#e34c26"/>
+    <text class="l" x="20" y="0">HTML <tspan class="p">0.9%</tspan></text></g><g transform="translate(210 52)"><circle cx="6" cy="-4" r="6" fill="#3572A5"/>
+    <text class="l" x="20" y="0">Python <tspan class="p">0.6%</tspan></text></g><g transform="translate(0 78)"><circle cx="6" cy="-4" r="6" fill="#8B949E"/>
+    <text class="l" x="20" y="0">Batchfile <tspan class="p">0.1%</tspan></text></g><g transform="translate(210 78)"><circle cx="6" cy="-4" r="6" fill="#8B949E"/>
+    <text class="l" x="20" y="0">PowerShell <tspan class="p">0.0%</tspan></text></g></g>
+</svg>
